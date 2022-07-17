@@ -1,0 +1,169 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div,label,input,textarea,select {
+        width: 100%;
+    }
+</style>
+<body>
+    <form name="bd" >
+        <div>
+            <label for="imgUrl">Image url:</label><br>
+            <input type="text" id="imgUrl" name="imgUrl" placeholder="200x300 image url" value="">
+        </div>        
+        <div>
+            <label for="from">From:</label><br>
+            <input type="text" id="from" name="from" value="">
+        </div>
+        <br/>
+        <div>
+            <label for="to">To:</label><br>
+            <input type="text" id="to" name="to" value="">
+        </div>
+        <br/>
+        <div>
+            <label for="subject">Subject:</label><br>
+            <input type="text" id="subject" name="subject" value="">
+        </div>
+        <br/>
+        <div>
+            <label for="point">Point of Origin:</label><br>
+            <input type="text" id="point" name="point" placeholder="where your character is sending the message from"value="">
+        </div>
+        <br/>
+        <div>
+            <label for="encryption">Encryption Level</label><br>
+            <select name="encryption" id="encryption">
+                <option value="[color=#00BF80]最小[/color]">minimum</option>
+                <option value="[color=#008080]並み[/color]">medium</option>
+                <option value=" [color=#BFBF00]重畳[/color]">high</option>
+                <option value="[color=#800000]極み[/color]">extreme</option>
+              </select>
+        </div>
+        <br/>
+        <div>
+            <label for="importance">Importance</label><br>
+            <select name="importance" id="importance">
+                <option value="[color=#00BF80]最小[/color]">minimum</option>
+                <option value="[color=#008080]並み[/color]">medium</option>
+                <option value=" [color=#BFBF00]重畳[/color]">high</option>
+                <option value="[color=#800000]極み[/color]">extreme</option>
+              </select>
+        </div>
+        <br/>
+        <div>
+            <label for="descripton">Descripton:</label><br>
+            <textarea id="descripton" name="descripton" rows="10" cols="100" placeholder="Lorem ipsum dolor sit amet"></textarea>
+        </div>
+        <br/>
+        <div>
+            <label for="farewell">Farewell Statement:</label><br>
+            <input type="text" id="farewell" name="farewell" placeholder="insert farewell statement"value="">
+        </div>
+        <br/>
+        <div>
+            <label for="characterName">Character Name:</label><br>
+            <input type="text" id="characterName" name="characterName" placeholder="character name, first in Japanese | then in English" value="">
+        </div>
+        <br/>
+        <div>
+            <label for="rankName">Rank Name:</label><br>
+            <input type="text" id="rankName" name="rankName" placeholder="Rank name, first in Japanese | then in English" value="">
+        </div>
+        <br/>
+        <div>
+            <label for="clanName">Clan Name:</label><br>
+            <input type="text" id="clanName" name="clanName" placeholder="Clan name if applicable, otherwise leave it empty" value="">
+        </div>
+        <br/>
+        <div>
+            <label for="chatLogTitle">Chat Log Title:</label><br>
+            <input type="text" id="chatLogTitle" name="chatLogTitle" value="">
+        </div>
+        <br/>
+        <div>
+            <label for="blackBoxRecording">Black Box Recording:</label><br>
+            <textarea id="blackBoxRecording" name="blackBoxRecording" rows="10" cols="100" placeholder=""></textarea>
+        </div>
+        <br/>
+        <div>
+            <label for="videTitle">Screenshot/video title:</label><br>
+            <input type="text" id="videTitle" name="videTitle" value="">
+        </div>
+        <br/>
+        <div>
+            <label for="visualFeed">Visual Feed:</label><br>
+            <textarea id="visualFeed" name="visualFeed" rows="10" cols="100" placeholder=""></textarea>
+        </div>
+        <button id="submit">convert</button>
+    </form>
+</body>
+<script>
+    const formString = `[indent][indent][float=left][img=40x40]https://i.imgur.com/29yFjlj.png[/img][/float][float=right][img=40x40]https://i.imgur.com/29yFjlj.png[/img][/float][font=Cinzel][size=x-large][color=#821633][align=center]TRANSMISSION RECEIVED: DECRYPTING...
+[size=small]薔薇龍 | こんにちは。[/size][/align][/color][/size][/font][hrc]#821633[/hrc]
+
+[float=left][table][tr][td][img=200x300]$$imgUrl$$[/img][/td][/tr][/table][/float]
+[float=right][img=200x200]https://i.imgur.com/29yFjlj.png[/img][/float]
+
+[align=justify][font=Overpass][size=small][color=#821633]From: [color=#FFFFFF]$$from$$[/color][/color][/size][/font][/align]
+
+
+[align=justify][font=Overpass][size=small][color=#821633]To: [color=#FFFFFF]$$to$$[/color][/color][/size][/font][/align]
+
+
+[align=justify][font=Overpass][size=small][color=#821633]Subject: [color=#FFFFFF]$$subject$$[/color][/color][/size][/font][/align]
+
+
+[align=justify][font=Overpass][size=small][color=#821633]Point of Origin: [color=#FFFFFF]$$point$$[/color][/color][/size][/font][/align]
+
+
+[align=justify][font=Overpass][size=small][color=#821633]Encryption Level: [color=#FFFFFF]$$encryption$$[/color][/color][/size][/font][/align]
+
+
+[align=justify][font=Overpass][size=small][color=#821633]Importance: [color=#FFFFFF]$$importance$$[/color][/color][/size][/font][/align]
+[hrc]#821633[/hrc]
+
+[align=justify][font=Overpass][size=small][color=#FFFFFF]$$description$$
+
+$$farewell$$
+
+[color=#821633][font=F25 Bank Printer][size=large]$$characterName$$
+$$rankName$$
+$$clanName$$[/size][/font][/color]
+
+[float=right][color=#821633][font=Overpass]$$chatLogTitle$$[/font][/color][/float][spoiler=Black box recording]
+$$blackBoxRecording$$
+[/spoiler]
+[float=right][color=#821633][font=Overpass]$$videoTitle$$[/font][/color][/float][spoiler=Visual feed]
+$$visualFeed$$
+[/spoiler]
+
+[hrc]#821633[/hrc][/color][/size][/font][/align][font=Cinzel][size=x-large][color=#821633][align=center]Transmission Cut... Connection Failure. [float=left][img=40x40]https://i.imgur.com/29yFjlj.png[/img][/float][float=right][img=40x40]https://i.imgur.com/29yFjlj.png[/img][/float]
+
+[size=small]薔薇龍 | さようなら。[/size][/align][/color][/size][/font][/indent][/indent]`
+
+document.querySelector("#submit").addEventListener("click", function(event) {
+    let result = formString
+    var formData = Object.fromEntries(new FormData(document.querySelector('form')).entries());
+    const entries = Object.entries(formData);
+    entries.map((entry,index) => {
+        const field = `$$${entry[0]}$$`
+        const value = entry[1]
+        result = result.replace(field,value)
+    })
+    navigator.clipboard.writeText(result);
+
+    /* Alert the copied text */
+    alert("text copied");
+    event.preventDefault();
+         event.preventDefault();
+}, false);
+</script>
+
+</html>
